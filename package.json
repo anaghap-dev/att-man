@@ -1,0 +1,23 @@
+{
+  "name": "att-man",
+  "version": "1.0.0",
+  "description": "Attendance Management System",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install",
+    "install:all": "npm run install:client && npm run install:server",
+    "build:client": "cd client && npm run build",
+    "start:server": "cd server && npm start",
+    "start:client": "cd client && npm start",
+    "dev:server": "cd server && npm start",
+    "dev:client": "cd client && npm start"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}
