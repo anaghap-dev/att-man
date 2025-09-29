@@ -1,0 +1,20 @@
+services:
+  # Backend service
+  - type: web
+    name: att-man-backend
+    runtime: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: PORT
+        value: 10000
+
+  # Frontend service
+  - type: web
+    name: att-man-frontend
+    runtime: node
+    buildCommand: cd client && npm install && npm run build && npm install -g serve
+    startCommand: serve -s client/build -p $PORT
+    envVars:
+      - key: PORT
+        value: 3000
